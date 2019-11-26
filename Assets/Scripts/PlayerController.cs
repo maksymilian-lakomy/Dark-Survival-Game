@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
 
     public float speed = 1f;
 
+    public bool IsMoving = false;
+
     private void Awake() {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -27,6 +29,11 @@ public class PlayerController : MonoBehaviour {
             rigidbody2D.AddForce(new Vector2(0f, input.y*5f));
         
         animator.SetFloat("movement", rigidbody2D.velocity.magnitude);
+        if (rigidbody2D.velocity.magnitude > 0.1f)
+            IsMoving = true;
+        else
+            IsMoving = false;
+        
         if (input.x > 0)
             animator.SetInteger("direction", 1);
         else if (input.x < 0)
@@ -38,10 +45,6 @@ public class PlayerController : MonoBehaviour {
         if (input.y == 0f)
             rigidbody2D.velocity = Vector2.Lerp(rigidbody2D.velocity, new Vector2(rigidbody2D.velocity.x, 0f),
                                                 Time.deltaTime * 5f);
-        
-        float xPos = Mathf.Round(transform.position.x * 32) / 32;
-        float yPos = Mathf.Round(transform.position.y * 32) / 32;
-        transform.position = new Vector3(xPos, yPos, transform.position.z);
         
     }
 }
