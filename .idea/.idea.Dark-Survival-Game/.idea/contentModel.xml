@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BehaviorInterfaces" t="Include">
+            <e p="IBehavior.cs" t="Include" />
             <e p="ITemperatureBehavior.cs" t="Include" />
           </e>
           <e p="CameraController.cs" t="Include" />
@@ -18,6 +19,10 @@
           <e p="NodeManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="WorldObjects" t="Include">
+            <e p="FireplaceObject.cs" t="Include" />
+            <e p="WorldObject.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Dark-Survival-Game.sln" t="IncludeFlat" />
