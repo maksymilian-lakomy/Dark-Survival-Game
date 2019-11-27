@@ -7,7 +7,7 @@ namespace WorldObjects {
     [RequireComponent(typeof(Collider2D))]
     public abstract class WorldObject<T>: MonoBehaviour where T : IBehavior {
 
-        protected float RepeatTime = 2f;
+        protected abstract float RepeatTime { get; }
         protected readonly List<T> CharactersReacting = new List<T>();
         
         private void Awake() {

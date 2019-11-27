@@ -4,11 +4,15 @@ using UnityEngine;
 
 namespace WorldObjects {
     public class FireplaceObject : WorldObject<ITemperatureBehavior> {
-        
-        protected new float RepeatTime = 2f;
+
+        private float repeatTime = 5f;
+        protected override float RepeatTime {
+            get => repeatTime; 
+        }
 
         protected override void Action(ITemperatureBehavior character) {
             Debug.Log(character);
+            
         }
     }
 }

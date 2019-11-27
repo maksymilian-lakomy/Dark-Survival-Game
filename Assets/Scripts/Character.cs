@@ -14,4 +14,6 @@ public class Character : MonoBehaviour, ITemperatureBehavior {
     public void TemperatureChange(float change) {
         temperature += change;
     }
+    
+    
 }
