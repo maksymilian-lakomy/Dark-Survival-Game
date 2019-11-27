@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour {
             shouldFollow = false;
 
         if (shouldFollow) {
-            transform.position = Vector3.MoveTowards(transform.position, destinationPosition, Time.deltaTime * followSpeed);
+            transform.position = Vector3.Lerp(transform.position, destinationPosition, Time.deltaTime * followSpeed);
             // // transform.position = newPosition;
             // float xPos = Mathf.Round(newPosition.x * toRound) / toRound;
             // float yPos = Mathf.Round(newPosition.y * toRound) / toRound;
