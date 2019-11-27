@@ -11,21 +11,27 @@ namespace WorldObjects {
         protected readonly List<T> CharactersReacting = new List<T>();
         
         private void Awake() {
-            InvokeRepeating("Action", 0f, RepeatTime);
+            InvokeRepeating("ExecuteAction", 0f, RepeatTime);
         }
 
         protected void OnTriggerEnter2D(Collider2D other) {
-            T character = GetComponent<T>();
+            T character = other.GetComponent<T>();
             if (character != null)
                 CharactersReacting.Add(character);
         }
 
         protected void OnTriggerExit2D(Collider2D other) {
-            T character = GetComponent<T>();
-            if (character != null && CharactersReacting.Contains(character))
+            T character = other.GetComponent<T>();
+            if (character != null && CharactersReacting.Contains((T)(object)character))
                 CharactersReacting.Remove(character);
         }
 
-        protected abstract void Action();
+        private void ExecuteAction() {
+            foreach (T character in CharactersReacting) {
+                Action(character);
+            }
+        }
+
+        protected abstract void Action(T character);
     }
 }

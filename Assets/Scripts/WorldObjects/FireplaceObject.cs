@@ -7,8 +7,8 @@ namespace WorldObjects {
         
         protected new float RepeatTime = 2f;
 
-        protected override void Action() {
-            throw new System.NotImplementedException();
+        protected override void Action(ITemperatureBehavior character) {
+            Debug.Log(character);
         }
     }
 }
