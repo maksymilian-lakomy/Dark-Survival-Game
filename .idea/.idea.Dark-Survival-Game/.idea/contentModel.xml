@@ -1,15 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\aleks\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\aleks\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Dark-Survival-Game.1620571512.00" t="ExcludeRecursive" />
-    <e p="C:\Users\aleks\OneDrive\Dokumenty\Github\Dark-Survival-Game" t="IncludeRecursive">
-      <e p=".git\info\exclude" t="IncludeRecursive" />
+    <e p="C:\Unity Projects\Dark-Survival-Game" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BehaviorInterfaces" t="Include">
             <e p="IBehavior.cs" t="Include" />
+            <e p="IHungerBehavior.cs" t="Include" />
             <e p="ITemperatureBehavior.cs" t="Include" />
           </e>
           <e p="CameraController.cs" t="Include" />
@@ -30,5 +28,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\bezaw\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\bezaw\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Dark-Survival-Game.1048944414.00" t="ExcludeRecursive" />
   </component>
 </project>
