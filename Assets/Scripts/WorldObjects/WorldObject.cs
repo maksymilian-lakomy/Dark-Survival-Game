@@ -13,9 +13,11 @@ namespace WorldObjects {
         private void Awake() {
             InvokeRepeating("ExecuteAction", 0f, RepeatTime);
         }
+        
 
         protected void OnTriggerEnter2D(Collider2D other) {
             T character = other.GetComponent<T>();
+            Debug.Log(other.name);
             if (character != null)
                 CharactersReacting.Add(character);
         }
