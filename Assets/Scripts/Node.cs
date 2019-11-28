@@ -11,7 +11,7 @@ public class Node : MonoBehaviour {
     public Node Parent;
 
     public string GetName() {
-       return $"[{transform.position.x},{transform.position.y}]";
+       return transform.name;
    }
    
    public void ConnectNodes() {

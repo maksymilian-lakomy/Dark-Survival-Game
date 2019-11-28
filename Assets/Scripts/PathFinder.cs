@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using Priority_Queue;
 using UnityEngine;
@@ -18,13 +17,13 @@ public static class PathFinder
             trace.Add(current);
         }
 
-        for (int i = trace.Count -1; i >= 0; i--) {
+        for (int i = trace.Count-1; i >= 0; i--) {
             path.Enqueue(trace[i]);
         }
         return path;
     }
 
-    public static double Distance(Node a,Node b)
+    private static double Distance(Node a,Node b)
     {
         Vector3 positionA = a.transform.position;
         Vector3 positionB = b.transform.position;
@@ -36,22 +35,18 @@ public static class PathFinder
     {
         Dictionary<string,Node> closed = new Dictionary<string,Node>();
         SimplePriorityQueue <Node,double> open = new SimplePriorityQueue<Node,double>();
-            
-        Debug.Log(origin);
-        Debug.Log(destination);
 
         open.Enqueue(origin,0);
 
         while(open.Count > 0)
         {
             Node current = open.Dequeue();
-
+            closed.Add(current.GetName(),current);
+            
             if(current == destination) {
                 return ReconstructPath(closed,origin, current ); //reconstruct path
             }
-
-            closed.Add(current.GetName(),current);
-
+            
             foreach (Node n in current.connectedNodes) {
                     
                 if (closed.ContainsKey(n.GetName()))

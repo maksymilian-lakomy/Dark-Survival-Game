@@ -8,27 +8,32 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="CameraController.cs" t="Include" />
-          <e p="Libraries" t="Include">
-            <e p="OptimizedPriorityQueue.4.2.0" t="Include">
-              <e p="lib" t="Include">
-                <e p="net45" t="Include">
-                  <e p="Priority Queue.xml" t="Include" />
-                </e>
-              </e>
-            </e>
+          <e p="BehaviorInterfaces" t="Include">
+            <e p="IBehavior.cs" t="Include" />
+            <e p="IHungerBehavior.cs" t="Include" />
+            <e p="ITemperatureBehavior.cs" t="Include" />
           </e>
+          <e p="CameraController.cs" t="Include" />
+          <e p="Character.cs" t="Include" />
+          <e p="ItemData.cs" t="Include" />
           <e p="Node.cs" t="Include" />
           <e p="NodeEditor.cs" t="Include" />
           <e p="NodeManager.cs" t="Include" />
+          <e p="NodeManagerEditor.cs" t="Include" />
           <e p="PathFinder.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="WeatherController.cs" t="Include" />
+          <e p="WorldItem.cs" t="Include" />
+          <e p="WorldObjects" t="Include">
+            <e p="FireplaceObject.cs" t="Include" />
+            <e p="WorldObject.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Dark-Survival-Game.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="packages.config" t="Include" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
