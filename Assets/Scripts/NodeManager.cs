@@ -9,6 +9,11 @@ public class NodeManager : MonoBehaviour {
     public List<Node> Nodes = new List<Node>();
 
     public static NodeManager i;
+
+    
+    //for debugging purposes
+    public Node Origin;
+    public Node Destination;
     
     private void Awake() {
         if (i == null)
