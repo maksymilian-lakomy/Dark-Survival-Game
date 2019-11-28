@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class WorldItem : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    
     [SerializeField]
     public float radius;
-
-    public virtual void Interact() {
-        // cos tam cos tam elo
-    }
-    private void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
     
+    public SpriteRenderer spriteRenderer;
+    public Rigidbody2D rigidbody2D;
+    public ItemData itemData;
+
+    public List<ItemAction> itemActions;          
+    
+    private void Awake() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
 }
