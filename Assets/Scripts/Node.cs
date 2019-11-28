@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Node : MonoBehaviour {
-   public List<Node> connectedNodes = new List<Node>();
+    public List<Node> connectedNodes = new List<Node>();
+    public double G, H;
+    public Node Parent;
 
+    public string GetName() {
+       return $"[{transform.position.x},{transform.position.y}]";
+   }
+   
    public void ConnectNodes() {
        foreach (Node node in connectedNodes) {
            if (node == null)
