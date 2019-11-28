@@ -17,21 +17,17 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehaviour {
         InvokeRepeating(nameof(ReactingToWeather), 0f, 1f);
     }
 
-    public float Temperature {
-        get => temperature;
-    }
+    public float Temperature => temperature;
 
     public void TemperatureChange(float change) {
         temperature += change;
-        Debug.Log("Character walked near to fireplace");
     }
 
     private void ReactingToWeather() {
         temperature = Mathf.MoveTowards(temperature, WeatherController.i.CurrentTemperature, .25f);
     }
-    
 
-    public float Hunger { get; }
+    public float Hunger => hunger;
     public void HungerChange(float change) {
         hunger = Mathf.Clamp(hunger + change, 0f, 100f);
     }
