@@ -12,11 +12,13 @@
           </e>
           <e p="CameraController.cs" t="Include" />
           <e p="Character.cs" t="Include" />
+          <e p="ItemData.cs" t="Include" />
           <e p="Node.cs" t="Include" />
           <e p="NodeEditor.cs" t="Include" />
           <e p="NodeManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="WorldItem.cs" t="Include" />
           <e p="WorldObjects" t="Include">
             <e p="FireplaceObject.cs" t="Include" />
             <e p="WorldObject.cs" t="Include" />

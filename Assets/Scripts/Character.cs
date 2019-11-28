@@ -10,8 +10,7 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehaviour {
 
     protected float hunger;
 
-    private void Awake()
-    {
+    private void Awake() {
         InvokeRepeating(nameof(HungerLogic), 0f, 1f);
     }
 
@@ -24,14 +23,18 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehaviour {
     }
 
 
-    public float Hunger { get; }
-    public void HungerChange(float change)
-    {
+    public float Hunger {
+        get => hunger;
+    }
+    
+    public void HungerChange(float change) {
         hunger = Mathf.Clamp(hunger + change, 0f, 100f);
     }
 
     private void HungerLogic() {
         HungerChange(-.5f);
-        
+        if (hunger == 0) {
+            Debug.Log("y o u  d i e d");
+        }
     }
 }
