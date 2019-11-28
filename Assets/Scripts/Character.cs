@@ -9,11 +9,12 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehaviour {
     [SerializeField]
     protected float temperature;
 
+    [SerializeField]
     protected float hunger;
 
-    private void Awake()
-    {
+    private void Awake() {
         InvokeRepeating(nameof(HungerLogic), 0f, 1f);
+        InvokeRepeating(nameof(ReactingToWeather), 0f, 1f);
     }
 
     public float Temperature {
@@ -25,15 +26,17 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehaviour {
         Debug.Log("Character walked near to fireplace");
     }
 
+    private void ReactingToWeather() {
+        temperature = Mathf.MoveTowards(temperature, WeatherController.i.CurrentTemperature, .25f);
+    }
+    
 
     public float Hunger { get; }
-    public void HungerChange(float change)
-    {
+    public void HungerChange(float change) {
         hunger = Mathf.Clamp(hunger + change, 0f, 100f);
     }
 
     private void HungerLogic() {
         HungerChange(-.5f);
-        
     }
 }

@@ -809,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: 0
+  hunger: 50
 --- !u!1 &657148523
 GameObject:
   m_ObjectHideFlags: 0

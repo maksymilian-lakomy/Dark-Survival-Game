@@ -6,10 +6,19 @@ using UnityEngine;
 
 public class WeatherController : MonoBehaviour {
     private List<ITemperatureBehavior> reactingToTemperature = new List<ITemperatureBehavior>();
+    private float currentTemperature = -10f;
+
+    public float CurrentTemperature => currentTemperature;
+
+
+    public static WeatherController i;
 
     private void Awake() {
         FindAllObjectsReactingToTemperature();
-        InvokeRepeating(nameof(TemperatureAction), 0, 1f);
+        if (i == null)
+            i = this;
+        else if (i != this)
+            Destroy(gameObject);
     }
     
     private void FindAllObjectsReactingToTemperature() {
@@ -20,9 +29,4 @@ public class WeatherController : MonoBehaviour {
         }
     }
 
-    private void TemperatureAction() {
-        foreach (ITemperatureBehavior objectReacting in reactingToTemperature) {
-            objectReacting.TemperatureChange(-.25f);
-        }
-    }
 }

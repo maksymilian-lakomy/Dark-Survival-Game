@@ -23,10 +23,6 @@ public class CameraController : MonoBehaviour {
 
         if (shouldFollow) {
             transform.position = Vector3.Lerp(transform.position, destinationPosition, Time.deltaTime * followSpeed);
-            // // transform.position = newPosition;
-            // float xPos = Mathf.Round(newPosition.x * toRound) / toRound;
-            // float yPos = Mathf.Round(newPosition.y * toRound) / toRound;
-            // transform.position = new Vector3(xPos, yPos, transform.position.z);
         }
 
         

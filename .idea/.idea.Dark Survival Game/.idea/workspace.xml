@@ -31,7 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldObjects/WorldObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NodeManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeatherController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeatherController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -44,10 +44,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/WeatherFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WorldObjects/FireplaceObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WorldObjects/WorldObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeatherController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WorldObjects/FireplaceObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character.cs" />
       </list>
     </option>
   </component>
@@ -107,7 +108,7 @@
       <workItem from="1574780808050" duration="4316000" />
       <workItem from="1574791645140" duration="6287000" />
       <workItem from="1574801714190" duration="3880000" />
-      <workItem from="1574952220933" duration="1520000" />
+      <workItem from="1574952220933" duration="3510000" />
     </task>
     <servers />
   </component>
