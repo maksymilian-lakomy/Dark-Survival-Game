@@ -11,7 +11,6 @@ namespace WorldObjects {
         }
 
         protected override void Action(ITemperatureBehavior character) {
-            Debug.Log(character);
             character.TemperatureChange(.5f);
             
         }
