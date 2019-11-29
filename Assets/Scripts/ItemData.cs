@@ -4,12 +4,6 @@ using System.Collections.Generic;
 using BehaviorInterfaces;
 using UnityEngine;
 
-[Serializable]
-public class ItemActionSerializer
-{
-    public ItemAction<IBehavior> ItemAction;
-}
-
 [CreateAssetMenu (menuName = "Items/ItemData")] 
 public class ItemData : ScriptableObject {
     [SerializeField]
@@ -20,5 +14,5 @@ public class ItemData : ScriptableObject {
     public string description;
 
     [SerializeField]
-    public List<ItemActionSerializer> itemActions;
+    public List<ItemAction<IBehavior> > itemActions;
 }
