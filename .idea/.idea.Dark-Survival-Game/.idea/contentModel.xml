@@ -8,11 +8,13 @@
           <e p="BehaviorInterfaces" t="Include">
             <e p="IBehavior.cs" t="Include" />
             <e p="IHungerBehavior.cs" t="Include" />
+            <e p="IInteraction.cs" t="Include" />
             <e p="ITemperatureBehavior.cs" t="Include" />
           </e>
           <e p="CameraController.cs" t="Include" />
           <e p="Character.cs" t="Include" />
           <e p="ConsumeAction.cs" t="Include" />
+          <e p="Inventory.cs" t="Include" />
           <e p="ItemAction.cs" t="Include" />
           <e p="ItemData.cs" t="Include" />
           <e p="Node.cs" t="Include" />

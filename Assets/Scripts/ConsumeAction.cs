@@ -13,6 +13,6 @@ public class ConsumeAction : ItemAction
         IHungerBehavior behavior = hungerBehavior as IHungerBehavior;
         if (behavior == null)
             return;
-        behavior.HungerChange(-10f);
+        behavior.HungerChange(+10f);
     }
 }
