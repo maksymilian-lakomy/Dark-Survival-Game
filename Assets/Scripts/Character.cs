@@ -8,6 +8,7 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehavior {
 
     protected float temperature;
 
+    [SerializeField]
     protected float hunger;
 
     private void Awake() {

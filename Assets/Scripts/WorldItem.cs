@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using BehaviorInterfaces;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -19,4 +20,10 @@ public class WorldItem : MonoBehaviour
         collider = GetComponent<Collider2D>();
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        IBehavior behaviour = other.GetComponent<IBehavior>();
+        foreach (ItemAction itemAction in itemData.itemActions) {
+            itemAction.Action(behaviour);
+        }
+    }
 }

@@ -5,7 +5,8 @@ using BehaviorInterfaces;
 using UnityEngine;
 
 [Serializable]
-public abstract class ItemAction<T> : ScriptableObject where T : IBehavior
+public abstract class ItemAction: ScriptableObject
 {
-    public abstract void Action(T behavior);
+    //It should be made with beautiful generic class but unity has cancer or something.
+    public abstract void Action(IBehavior behavior);
 }

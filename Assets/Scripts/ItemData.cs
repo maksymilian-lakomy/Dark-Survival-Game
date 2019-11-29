@@ -14,5 +14,5 @@ public class ItemData : ScriptableObject {
     public string description;
 
     [SerializeField]
-    public List<ItemAction<IBehavior> > itemActions;
+    public List<ItemAction> itemActions;
 }
