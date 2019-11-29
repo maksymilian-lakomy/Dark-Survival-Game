@@ -1825,6 +1825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6551225dc4330f246a1ef18d6ff132f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hunger: 50
 --- !u!210 &1041117062
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -12502,7 +12503,7 @@ GameObject:
   - component: {fileID: 1956211092}
   - component: {fileID: 1956211095}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: ziemniak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12523,7 +12524,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.58
+  m_Radius: 1
 --- !u!212 &1956211093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12541,7 +12542,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12563,7 +12564,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4433962, g: 0.11084905, b: 0.11084905, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12600,8 +12601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  spriteRenderer: {fileID: 0}
-  collider: {fileID: 0}
+  spriteRenderer: {fileID: 1956211093}
+  collider: {fileID: 1956211092}
   itemData: {fileID: 11400000, guid: d3fb2d2e24dd60e4a8d9119628f13c94, type: 2}
 --- !u!1 &2000520966
 GameObject:
