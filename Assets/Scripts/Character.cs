@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using BehaviorInterfaces;
 using UnityEngine;
 
-public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehaviour {
+public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehavior {
 
     protected float temperature;
 

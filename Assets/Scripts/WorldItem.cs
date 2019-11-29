@@ -3,20 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class WorldItem : MonoBehaviour
 {
     [SerializeField]
     public float radius;
     
     public SpriteRenderer spriteRenderer;
-    public Rigidbody2D rigidbody2D;
+    public Collider2D collider;
     public ItemData itemData;
 
-    public List<ItemAction> itemActions;          
-    
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
     }
 
 }

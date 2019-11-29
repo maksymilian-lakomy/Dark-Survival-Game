@@ -1,6 +1,6 @@
 ﻿namespace BehaviorInterfaces
 {
-    public interface IHungerBehaviour : IBehavior
+    public interface IHungerBehavior : IBehavior
     {
         float Hunger { get; }
         void HungerChange(float change);
