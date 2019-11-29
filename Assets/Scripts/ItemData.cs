@@ -1,16 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using BehaviorInterfaces;
 using UnityEngine;
 
+[Serializable]
+public class ItemActionSerializer
+{
+    public ItemAction<IBehavior> ItemAction;
+}
+
 [CreateAssetMenu (menuName = "Items/ItemData")] 
 public class ItemData : ScriptableObject {
     [SerializeField]
-    public string name;
+    public string itemName;
     [SerializeField]
     public Sprite icon = null;
     [SerializeField] 
     public string description;
 
-    public List<ItemAction<IBehavior>> itemActions;
+    [SerializeField]
+    public List<ItemActionSerializer> itemActions;
 }

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using BehaviorInterfaces;
 using UnityEngine;
 
-public class ConsumeAction : ItemAction<IHungerBehavior> {
+[CreateAssetMenu (menuName = "Items/ConsumeAction")] 
+public class ConsumeAction : ItemAction<IHungerBehavior>
+{
+    [SerializeField] private float hungerChange = 0f;
     public override void Action(IHungerBehavior hungerBehavior) {
         
     }
