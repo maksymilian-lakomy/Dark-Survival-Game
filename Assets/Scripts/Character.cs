@@ -35,7 +35,7 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehavior {
     private void HungerLogic() {
         HungerChange(-.5f);
         if (hunger == 0) {
-            Debug.Log("y o u  d i e d");
+            // Debug.Log("y o u  d i e d");
         }
     }
 }

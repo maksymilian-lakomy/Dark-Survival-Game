@@ -7,12 +7,12 @@ using UnityEngine;
 [CreateAssetMenu (menuName = "Items/ItemData")] 
 public class ItemData : ScriptableObject {
     [SerializeField]
-    public string itemName;
+    public string ItemName;
     [SerializeField]
-    public Sprite icon = null;
+    public Sprite Icon = null;
     [SerializeField] 
-    public string description;
+    public string Description;
 
     [SerializeField]
-    public List<ItemAction> itemActions;
+    public List<ItemAction> ItemActions;
 }

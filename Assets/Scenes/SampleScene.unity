@@ -1736,7 +1736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041117055}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.24, y: 0.01, z: 5.8813477}
+  m_LocalPosition: {x: -0.342, y: 0.01, z: 5.8813477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 765070369}
@@ -1825,7 +1825,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6551225dc4330f246a1ef18d6ff132f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hunger: 0
 --- !u!210 &1041117062
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041117055}
@@ -7019,6 +7023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355787919}
   - component: {fileID: 1355787918}
+  - component: {fileID: 1355787920}
   m_Layer: 0
   m_Name: WoodLog
   m_TagString: Untagged
@@ -7089,6 +7094,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1355787920
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355787917}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.1632653, y: 0.29591838}
+    newSize: {x: 0.890625, y: 0.2265625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1632653, y: 0.29591838}
+  m_EdgeRadius: 0
 --- !u!1 &1424369609
 GameObject:
   m_ObjectHideFlags: 0
@@ -12677,9 +12708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  spriteRenderer: {fileID: 1956211093}
-  collider: {fileID: 1956211092}
-  itemData: {fileID: 11400000, guid: d3fb2d2e24dd60e4a8d9119628f13c94, type: 2}
+  ItemData: {fileID: 11400000, guid: d3fb2d2e24dd60e4a8d9119628f13c94, type: 2}
 --- !u!1 &2000520966
 GameObject:
   m_ObjectHideFlags: 0
