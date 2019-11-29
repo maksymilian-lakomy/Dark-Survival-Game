@@ -8,8 +8,8 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehavior {
 
     protected float temperature;
 
-    [SerializeField]
-    protected float hunger;
+    [SerializeField] protected float hunger;
+    
 
     private void Awake() {
         InvokeRepeating(nameof(HungerLogic), 0f, 1f);
