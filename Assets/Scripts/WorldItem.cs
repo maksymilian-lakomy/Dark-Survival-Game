@@ -13,6 +13,7 @@ public class WorldItem : MonoBehaviour
     
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D rangeCollider2D;
+    
     public ItemData ItemData;
 
     private void Awake() {

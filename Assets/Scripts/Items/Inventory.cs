@@ -2,61 +2,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using BehaviorInterfaces;
-using ItemInterfaces;
+  using DefaultNamespace.Items;
+  using ItemInterfaces;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+  
+  [Serializable]
+  // Inventory is no longer singleton. Everything that you want can now have its own container of objects.
+public class Inventory  {
     
-    #region Singleton
-
-    public static Inventory instance;
-
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Debug.LogWarning("More than one instance of Inventory found!");
-            return;
-        }
-
-        instance = this;
-
-    }
-
-    #endregion
-
-    public List<IInventoryItem> inventoryItems = new List<IInventoryItem>();
-    public IItem equippedItem; // interfejs, bo mozna w łapce trzymac na przyklad kurczaka, ktory jest
-                               // MonoBehaviour a nie InventoryItemData (to samo z ekwipunkiem)
-    public int Space;
-
-    public bool AddItem(IInventoryItem item) {
-        if (inventoryItems.Count >= Space) {
-            Debug.Log("Not enough room.");
+      [SerializeField]
+    private List<InventoryKeyValuePair> inventoryItems = new List<InventoryKeyValuePair>();
+    // If you would like to have access to this inventory from another place.
+    public List<InventoryKeyValuePair> InventoryItems => inventoryItems; 
+    
+    private IItem equippedItem;
+    // Same as above.
+    public IItem EquippedItem => equippedItem; 
+    
+    [SerializeField]
+    private int space = 6;
+    public int Space => space;
+    
+    public bool AddItem(IInventoryItem item, int amount) {
+        if (inventoryItems.Count > Space) {
             return false;
         }
-        inventoryItems.Add(item);
+        inventoryItems.Add(new InventoryKeyValuePair(item, amount));
         return true;
     }
 
-    public bool AddItem(IItem item) {
-        if (equippedItem == null) {
-            // equippedItem = ten item na którym jest focus
-            return true;
-        } else {
-            return false;
-        }
+    public IItem EquipItem(IItem item) {
+        IItem previousEquippedItem = equippedItem;
+        equippedItem = item;
+        return previousEquippedItem;
     }
 
-    public void DropEquippedItem() {
-        if (equippedItem != null)
-        {
-            ItemData itemData = equippedItem as ItemData;
-            if (itemData != null)
-            {
-                WorldItem.CreateWorldItem(itemData);
-            }
-            equippedItem = null;
-        }
+    public void DropItem(IItem item) {
+        ItemData itemData = item as ItemData;
+        if (itemData)
+            WorldItem.CreateWorldItem(itemData);
     }
-}
+
+    public void UnequipItem() {
+        if (equippedItem == null)
+            return;
+        IInventoryItem inventoryItem = equippedItem as IInventoryItem;
+    }
+  }

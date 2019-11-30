@@ -33,6 +33,7 @@
             <e p="Actions.meta" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="Inventory.cs.meta" t="Include" />
+            <e p="InventoryKeyValuePair.cs" t="Include" />
           </e>
           <e p="Libraries" t="Include">
             <e p="OptimizedPriorityQueue.4.2.0" t="Include">
