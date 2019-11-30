@@ -1,4 +1,4 @@
-﻿namespace BehaviorInterfaces
+﻿namespace InteractionInterfaces
 {
     public interface IInteraction
     {
