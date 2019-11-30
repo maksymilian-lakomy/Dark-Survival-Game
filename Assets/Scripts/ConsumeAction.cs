@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using BehaviorInterfaces;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Items/ConsumeAction")]
+[CreateAssetMenu (menuName = "Items/Actions/ConsumeAction")]
 [Serializable]
 public class ConsumeAction : ItemAction
 {
