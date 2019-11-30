@@ -19,7 +19,13 @@ public class PlayerController : MonoBehaviour {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-    
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            animator.SetBool("useAxe", true);
+        }
+    }
+
     private void FixedUpdate() {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (Mathf.Abs(rigidbody2D.velocity.x) < speed)

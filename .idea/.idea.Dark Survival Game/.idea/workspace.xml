@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeefb7a0-afec-4cb0-b8e3-e86442fcbb4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Dark Survival Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Dark Survival Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player 1.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/WoodLog.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/WoodLog.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wood Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wood Log.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +120,7 @@
       <workItem from="1574791645140" duration="6287000" />
       <workItem from="1574801714190" duration="3880000" />
       <workItem from="1574952220933" duration="6185000" />
-      <workItem from="1575047579998" duration="4175000" />
+      <workItem from="1575047579998" duration="4855000" />
     </task>
     <servers />
   </component>
