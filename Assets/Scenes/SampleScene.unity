@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.25
   IsMoving: 0
-  eyesPosition: {x: 0.1, y: 0.5, z: 0}
+  eyesPosition: {x: 0.1, y: 0, z: 0}
   viewDistance: 1.5
   direction: 1
 --- !u!70 &1041117059
