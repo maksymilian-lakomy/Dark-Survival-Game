@@ -15,8 +15,13 @@
           <e p="Character.cs" t="Include" />
           <e p="ConsumeAction.cs" t="Include" />
           <e p="Inventory.cs" t="Include" />
+          <e p="InventoryItemData.cs" t="Include" />
           <e p="ItemAction.cs" t="Include" />
           <e p="ItemData.cs" t="Include" />
+          <e p="ItemInterfaces" t="Include">
+            <e p="IInventoryItem.cs" t="Include" />
+            <e p="IItem.cs" t="Include" />
+          </e>
           <e p="Node.cs" t="Include" />
           <e p="NodeEditor.cs" t="Include" />
           <e p="NodeManager.cs" t="Include" />

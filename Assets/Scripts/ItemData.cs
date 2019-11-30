@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using BehaviorInterfaces;
+using ItemInterfaces;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "Items/ItemData")] 
-public class ItemData : ScriptableObject {
-    [SerializeField]
-    public string ItemName;
-    [SerializeField]
-    public Sprite Icon = null;
-    [SerializeField] 
-    public string Description;
-
-    [SerializeField]
+public class ItemData : ScriptableObject, IItem {
+    
+    protected string itemName;
+    protected string itemDescription;
+    protected Sprite itemSprite;
+    
+    public string ItemName => itemName;
+    public string ItemDescription => itemDescription;
+    public Sprite ItemSprite => itemSprite;
+    
     public List<ItemAction> ItemActions;
 }

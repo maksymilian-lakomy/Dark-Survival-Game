@@ -22,7 +22,7 @@ public class WorldItem : MonoBehaviour
             rangeCollider2D = GetComponent<CircleCollider2D>();
         rangeCollider2D.isTrigger = true;
         rangeCollider2D.radius = radius;
-        spriteRenderer.sprite = ItemData.Icon;
+        spriteRenderer.sprite = ItemData.ItemSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
