@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿﻿﻿using UnityEngine;
  namespace ItemInterfaces {
     public interface IInventoryItem : IItem
     {

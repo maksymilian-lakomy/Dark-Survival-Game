@@ -16,8 +16,24 @@
           <e p="CameraController.cs" t="Include" />
           <e p="Character.cs" t="Include" />
           <e p="ConsumeAction.cs" t="Include" />
+          <e p="IActive.cs" t="Include" />
+          <e p="InteractionInterfaces" t="Include">
+            <e p="IInteraction.cs" t="Include" />
+            <e p="IInteraction.cs.meta" t="Include" />
+          </e>
           <e p="ItemAction.cs" t="Include" />
           <e p="ItemData.cs" t="Include" />
+          <e p="ItemInterfaces" t="Include">
+            <e p="IInventoryItem.cs" t="Include" />
+            <e p="IItem.cs" t="Include" />
+            <e p="IItem.cs.meta" t="Include" />
+          </e>
+          <e p="Items" t="Include">
+            <e p="Actions" t="Include" />
+            <e p="Actions.meta" t="Include" />
+            <e p="Inventory.cs" t="Include" />
+            <e p="Inventory.cs.meta" t="Include" />
+          </e>
           <e p="Libraries" t="Include">
             <e p="OptimizedPriorityQueue.4.2.0" t="Include">
               <e p="lib" t="Include">
@@ -26,6 +42,7 @@
                 </e>
               </e>
             </e>
+            <e p="OptimizedPriorityQueue.4.2.0.meta" t="Include" />
           </e>
           <e p="Node.cs" t="Include" />
           <e p="NodeEditor.cs" t="Include" />
@@ -34,6 +51,8 @@
           <e p="PathFinder.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="PlayerVision.cs" t="Include" />
+          <e p="Temporary" t="Include" />
           <e p="TransparencySortGraphicsHelper.cs" t="Include" />
           <e p="Tree.cs" t="Include" />
           <e p="WeatherController.cs" t="Include" />
@@ -42,6 +61,7 @@
             <e p="FireplaceObject.cs" t="Include" />
             <e p="WorldObject.cs" t="Include" />
           </e>
+          <e p="WorldUIManager.cs" t="Include" />
         </e>
       </e>
       <e p="Dark Survival Game.sln" t="IncludeFlat" />
