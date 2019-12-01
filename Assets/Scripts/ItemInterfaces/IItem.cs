@@ -6,6 +6,7 @@
      {
          string ItemName { get; }
          string ItemDescription { get; }
-         Sprite ItemSprite { get; }
+         GameObject ItemPrefab { get; }
+
      }
  }

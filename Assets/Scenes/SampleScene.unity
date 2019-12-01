@@ -2216,7 +2216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041117055}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.342, y: 0.01, z: 5.8813477}
+  m_LocalPosition: {x: -1.57, y: 0.44, z: 5.8813477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 765070369}
@@ -2272,8 +2272,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000037214967, y: -0.3121818}
-  m_Size: {x: 0.63606894, y: 0.34764376}
+  m_Offset: {x: -0.000000039779415, y: -0.33369395}
+  m_Size: {x: 0.6360692, y: 0.2967972}
   m_Direction: 1
 --- !u!50 &1041117060
 Rigidbody2D:
@@ -2310,7 +2310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunger: 0
   inventory:
-    inventoryItems: []
     space: 6
 --- !u!210 &1041117062
 SortingGroup:

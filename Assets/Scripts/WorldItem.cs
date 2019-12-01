@@ -16,6 +16,8 @@ public class WorldItem : MonoBehaviour
     
     public ItemData ItemData;
 
+    public int Amount = 0;
+
     private void Awake() {
         if (!spriteRenderer)
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,7 +25,6 @@ public class WorldItem : MonoBehaviour
             rangeCollider2D = GetComponent<CircleCollider2D>();
         rangeCollider2D.isTrigger = true;
         rangeCollider2D.radius = radius;
-        spriteRenderer.sprite = ItemData.ItemSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -33,13 +34,14 @@ public class WorldItem : MonoBehaviour
         }
     }
 
-    public static GameObject CreateWorldItem(ItemData itemData) {
+    public static GameObject CreateWorldItem(ItemData itemData, int amount) {
         GameObject newWorldItem = new GameObject(itemData.ItemName);
         newWorldItem.AddComponent<BoxCollider2D>();
         newWorldItem.AddComponent<CircleCollider2D>();
         newWorldItem.AddComponent<SpriteRenderer>();
         newWorldItem.AddComponent<WorldItem>();
         newWorldItem.GetComponent<WorldItem>().ItemData = itemData;
+        newWorldItem.GetComponent<WorldItem>().Amount = amount;
         return newWorldItem;
     }
 }

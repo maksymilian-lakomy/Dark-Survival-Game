@@ -12,9 +12,9 @@ using UnityEngine;
 public class Inventory  {
     
       [SerializeField]
-    private List<InventoryKeyValuePair> inventoryItems = new List<InventoryKeyValuePair>();
+    private List<InventorySlot> inventoryItems = new List<InventorySlot>();
     // If you would like to have access to this inventory from another place.
-    public List<InventoryKeyValuePair> InventoryItems => inventoryItems; 
+    public List<InventorySlot> InventoryItems => inventoryItems; 
     
     private IItem equippedItem;
     // Same as above.
@@ -23,12 +23,31 @@ public class Inventory  {
     [SerializeField]
     private int space = 6;
     public int Space => space;
+
+    public void UpdateInventorySize(int space) {
+        this.space = space;
+        inventoryItems.Capacity = this.space;
+    }
     
     public bool AddItem(IInventoryItem item, int amount) {
-        if (inventoryItems.Count > Space) {
-            return false;
+        foreach (InventorySlot slot in inventoryItems) {
+            if (slot.item == null) {
+                slot.item = new InventoryKeyValuePair(item, amount);
+            } 
         }
-        inventoryItems.Add(new InventoryKeyValuePair(item, amount));
+        return true;
+    }
+
+    public InventoryKeyValuePair GetItem(int slotNumber) {
+        if (slotNumber > inventoryItems.Count)
+            return null;
+        return inventoryItems[slotNumber].item;
+    }
+    
+    public bool RemoveItem(int slotNumber) {
+        if (slotNumber > inventoryItems.Count)
+            return false;
+        inventoryItems[slotNumber].item = null;
         return true;
     }
 
@@ -37,16 +56,14 @@ public class Inventory  {
         equippedItem = item;
         return previousEquippedItem;
     }
-
-    public void DropItem(IItem item) {
-        ItemData itemData = item as ItemData;
-        if (itemData)
-            WorldItem.CreateWorldItem(itemData);
-    }
-
-    public void UnequipItem() {
+    
+    public IItem UnequipItem() {
         if (equippedItem == null)
-            return;
-        IInventoryItem inventoryItem = equippedItem as IInventoryItem;
+            return null;
+        IItem item = equippedItem;
+        equippedItem = null;
+        return item;
     }
+
+
   }

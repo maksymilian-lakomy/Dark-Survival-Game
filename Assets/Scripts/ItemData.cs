@@ -9,11 +9,11 @@ public class ItemData : ScriptableObject, IItem {
     
     protected string itemName;
     protected string itemDescription;
-    protected Sprite itemSprite;
+    protected GameObject itemPrefab;
     
     public string ItemName => itemName;
     public string ItemDescription => itemDescription;
-    public Sprite ItemSprite => itemSprite;
-    
+    public GameObject ItemPrefab => itemPrefab;
+
     public List<ItemAction> ItemActions;
 }
