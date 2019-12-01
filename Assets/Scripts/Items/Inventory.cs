@@ -30,10 +30,10 @@ public class Inventory  {
         inventoryItems.Capacity = this.space;
     }
     
-    public bool AddItem(ItemData item, int amount) {
+    public bool AddItem(InventoryKeyValuePair item) {
         foreach (InventorySlot slot in inventoryItems) {
             if (slot.item == null) {
-                slot.item = new InventoryKeyValuePair(item, amount);
+                slot.item = item;
             } 
         }
         return true;
