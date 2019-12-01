@@ -1084,6 +1084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6752209cdd1ab1478aab6291eee32ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: d3fb2d2e24dd60e4a8d9119628f13c94, type: 2}
 --- !u!1 &571616807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1632,7 @@ GameObject:
   - component: {fileID: 713544422}
   - component: {fileID: 713544425}
   m_Layer: 0
-  m_Name: WoodLog (1)
+  m_Name: Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1650,7 +1651,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10261023, y: 0.22507107}
+  m_Offset: {x: -0.12826264, y: 0.14383805}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.22002015, y: 0.28551865}
@@ -1661,7 +1662,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4449942, y: 0.98978496}
+  m_Size: {x: 0.90673995, y: 0.8273189}
   m_EdgeRadius: 0
 --- !u!212 &713544423
 SpriteRenderer:
@@ -1738,6 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27d745021e74ff48b573a3f98a1c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 2eb1267e69e7c66439096635f973c6d4, type: 2}
 --- !u!1 &717808337
 GameObject:
   m_ObjectHideFlags: 0

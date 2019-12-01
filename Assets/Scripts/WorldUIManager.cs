@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using ItemInterfaces;
+using UnityEngine;
 
 namespace DefaultNamespace {
     public class WorldUIManager: MonoBehaviour {
@@ -21,6 +23,7 @@ namespace DefaultNamespace {
             CleanActiveObject();
             currentActiveObject = newActiveObject;
             IActive active = currentActiveObject.GetComponent<IActive>();
+            DebugObject();
             active?.SetActive(true);
         }
 
@@ -30,6 +33,15 @@ namespace DefaultNamespace {
             IActive active = currentActiveObject.GetComponent<IActive>();
             active?.SetActive(false);
             currentActiveObject = null;
+        }
+
+        private void DebugObject() {
+            IItem<ItemData> item = currentActiveObject.GetComponent<IItem<ItemData>>();
+            if (item != null)
+                Debug.Log("normal Item: " + item.Data.name);
+            IItem<CollectibleItemData> item2 = currentActiveObject.GetComponent<IItem<CollectibleItemData>>();
+            if (item2 != null)
+                Debug.Log("Collectible Item: " + item2.Data.name);
         }
         
     }
