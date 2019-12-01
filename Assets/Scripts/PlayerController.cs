@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using ItemInterfaces;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,28 +14,37 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rigidbody2D;
     private Animator animator;
 
-    public float speed = 1f;
+    public float Speed = 1f;
 
     public bool IsMoving = false;
 
     [SerializeField] private Vector3 eyesPosition;
     [SerializeField] private float viewDistance = 1f;
     [SerializeField] private int direction = 1;
-
-    [SerializeField] private GameObject temporaryActiveObject;
     
     private void Awake() {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
+    private void Update() {
+        GameObject activeObject = WorldUIManager.i.GetActiveObject(gameObject);
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            
+        } 
+    }
 
     private void FixedUpdate() {
+        Movement();
+        Vision();
+    }
+
+    private void Movement() {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if (Mathf.Abs(rigidbody2D.velocity.x) < speed)
+        if (Mathf.Abs(rigidbody2D.velocity.x) < Speed)
             rigidbody2D.AddForce(new Vector2(input.x*5f, 0f));
         
-        if (Mathf.Abs(rigidbody2D.velocity.y) < speed)
+        if (Mathf.Abs(rigidbody2D.velocity.y) < Speed)
             rigidbody2D.AddForce(new Vector2(0f, input.y*5f));
         
         animator.SetFloat("movement", rigidbody2D.velocity.magnitude);
@@ -55,8 +66,9 @@ public class PlayerController : MonoBehaviour {
         if (input.y == 0f)
             rigidbody2D.velocity = Vector2.Lerp(rigidbody2D.velocity, new Vector2(rigidbody2D.velocity.x, 0f),
                                                 Time.deltaTime * 5f);
-        
-        
+    }
+
+    private void Vision() {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + eyesPosition, transform.right * direction, viewDistance);
         
         if (hits.Length == 0)
@@ -65,11 +77,10 @@ public class PlayerController : MonoBehaviour {
         foreach (RaycastHit2D hit in hits) {
             if (hit.collider != null && hit.collider.isTrigger == false) {
                 GameObject newActiveObject = hit.collider.gameObject;
-                temporaryActiveObject = newActiveObject;
                 WorldUIManager.i.SetActiveObject(gameObject, newActiveObject);
                 break;
             }
         }
         Debug.DrawRay(transform.position + eyesPosition, transform.right * viewDistance * direction, Color.red);
     }
-}
+ }

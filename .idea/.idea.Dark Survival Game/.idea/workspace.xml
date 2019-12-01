@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aeefb7a0-afec-4cb0-b8e3-e86442fcbb4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Dark Survival Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Dark Survival Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldUIManager.cs" afterDir="false" />
     </list>
@@ -70,15 +66,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemInterfaces/ICollectibleItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CollectibleItemData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemInterfaces/IGenericItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WorldItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WorldCollectibleItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/InventoryKeyValuePair.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WorldUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Items/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/InventorySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Items/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WorldUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WorldItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -143,7 +139,7 @@
       <workItem from="1574952220933" duration="6185000" />
       <workItem from="1575047579998" duration="4855000" />
       <workItem from="1575124869335" duration="19356000" />
-      <workItem from="1575198679891" duration="9058000" />
+      <workItem from="1575198679891" duration="13432000" />
     </task>
     <servers />
   </component>

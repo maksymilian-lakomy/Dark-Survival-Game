@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DefaultNamespace.Items;
 using ItemInterfaces;
 using UnityEngine;
@@ -33,6 +34,12 @@ namespace DefaultNamespace {
             active?.SetActive(true);
         }
 
+        public GameObject GetActiveObject(GameObject key) {
+            if (activeObjects.ContainsKey(key))
+                return key;
+            return null;
+        }
+
         public void CleanActiveObject(GameObject key) {
             if (!activeObjects.ContainsKey(key) || activeObjects[key] == null)
                 return;
@@ -45,8 +52,6 @@ namespace DefaultNamespace {
             IItem<CollectibleItemData> item2 = activeObjects[key].GetComponent<IItem<CollectibleItemData>>();
             if (item2 != null)
                 key.GetComponent<Inventory>().AddItem(new InventoryKeyValuePair(item2.Data, 1));
-
-
         }
         
     }

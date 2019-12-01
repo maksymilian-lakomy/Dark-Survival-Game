@@ -17,6 +17,7 @@ public class Inventory: MonoBehaviour  {
     // If you would like to have access to this inventory from another place.
     public List<InventorySlot> InventoryItems => inventoryItems; 
     
+    [SerializeField]
     private ItemData equippedItem;
     // Same as above.
     public ItemData EquippedItem => equippedItem; 
