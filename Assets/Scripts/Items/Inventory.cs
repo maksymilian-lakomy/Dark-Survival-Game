@@ -10,7 +10,7 @@ using UnityEngine;
   
   [Serializable]
   // Inventory is no longer singleton. Everything that you want can now have its own container of objects.
-public class Inventory  {
+public class Inventory: MonoBehaviour  {
     
       [SerializeField]
     private List<InventorySlot> inventoryItems = new List<InventorySlot>();
@@ -32,8 +32,9 @@ public class Inventory  {
     
     public bool AddItem(InventoryKeyValuePair item) {
         foreach (InventorySlot slot in inventoryItems) {
-            if (slot.item == null) {
+            if (slot.item.Item == null || slot.item.Amount <= 0) {
                 slot.item = item;
+                break;
             } 
         }
         return true;

@@ -10,7 +10,6 @@ public class Character : MonoBehaviour, ITemperatureBehavior, IHungerBehavior {
 
     [SerializeField] protected float hunger;
 
-    [SerializeField] protected Inventory inventory;
     
 
     private void Awake() {

@@ -2411,6 +2411,7 @@ GameObject:
   - component: {fileID: 1041117058}
   - component: {fileID: 1041117061}
   - component: {fileID: 1041117059}
+  - component: {fileID: 1041117063}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2469,6 +2470,7 @@ MonoBehaviour:
   eyesPosition: {x: 0.1, y: 0, z: 0}
   viewDistance: 1.5
   direction: 1
+  temporaryActiveObject: {fileID: 0}
 --- !u!70 &1041117059
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2519,9 +2521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hunger: 0
-  inventory:
-    inventoryItems: []
-    space: 6
+  inventory: {fileID: 0}
 --- !u!210 &1041117062
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -2533,6 +2533,20 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1041117063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041117055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b033f2c9671f4b06bd904953526bbe4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItems: []
+  space: 6
 --- !u!1 &1154321693
 GameObject:
   m_ObjectHideFlags: 0
@@ -7569,7 +7583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290692191f7e49a5bacfe91dedb7d118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActiveObject: {fileID: 0}
 --- !u!1 &1457976265
 GameObject:
   m_ObjectHideFlags: 0

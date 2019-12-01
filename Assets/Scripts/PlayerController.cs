@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Vector3 eyesPosition;
     [SerializeField] private float viewDistance = 1f;
     [SerializeField] private int direction = 1;
+
+    [SerializeField] private GameObject temporaryActiveObject;
     
     private void Awake() {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -58,12 +60,13 @@ public class PlayerController : MonoBehaviour {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + eyesPosition, transform.right * direction, viewDistance);
         
         if (hits.Length == 0)
-            WorldUIManager.i.CleanActiveObject();
+            WorldUIManager.i.CleanActiveObject(gameObject);
         
         foreach (RaycastHit2D hit in hits) {
             if (hit.collider != null && hit.collider.isTrigger == false) {
                 GameObject newActiveObject = hit.collider.gameObject;
-                WorldUIManager.i.SetActiveObject(newActiveObject);
+                temporaryActiveObject = newActiveObject;
+                WorldUIManager.i.SetActiveObject(gameObject, newActiveObject);
                 break;
             }
         }

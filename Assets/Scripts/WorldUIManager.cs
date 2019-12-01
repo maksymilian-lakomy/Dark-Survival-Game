@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using DefaultNamespace.Items;
 using ItemInterfaces;
 using UnityEngine;
 
@@ -6,8 +8,10 @@ namespace DefaultNamespace {
     public class WorldUIManager: MonoBehaviour {
 
         public static WorldUIManager i;
-        [SerializeField]
-        private GameObject currentActiveObject;
+
+        private Dictionary<GameObject, GameObject> activeObjects = new Dictionary<GameObject,GameObject>();
+
+        [SerializeField] private Inventory inventoryToRender;
         
         
         private void Awake() {
@@ -17,31 +21,32 @@ namespace DefaultNamespace {
                 Destroy(gameObject);
         }
 
-        public void SetActiveObject(GameObject newActiveObject) {
-            if (currentActiveObject == newActiveObject)
+        public void SetActiveObject(GameObject key, GameObject newActiveObject) {
+            if (!activeObjects.ContainsKey(key))
+                activeObjects.Add(key, null);
+            if (activeObjects[key] == newActiveObject)
                 return;
-            CleanActiveObject();
-            currentActiveObject = newActiveObject;
-            IActive active = currentActiveObject.GetComponent<IActive>();
-            DebugObject();
+            CleanActiveObject(key);
+            activeObjects[key] = newActiveObject;
+            IActive active = activeObjects[key].GetComponent<IActive>();
+            DebugObject(key);
             active?.SetActive(true);
         }
 
-        public void CleanActiveObject() {
-            if (currentActiveObject == null)
+        public void CleanActiveObject(GameObject key) {
+            if (!activeObjects.ContainsKey(key) || activeObjects[key] == null)
                 return;
-            IActive active = currentActiveObject.GetComponent<IActive>();
+            IActive active = activeObjects[key].GetComponent<IActive>();
             active?.SetActive(false);
-            currentActiveObject = null;
+            activeObjects[key] = null;
         }
 
-        private void DebugObject() {
-            IItem<ItemData> item = currentActiveObject.GetComponent<IItem<ItemData>>();
-            if (item != null)
-                Debug.Log("normal Item: " + item.Data.name);
-            IItem<CollectibleItemData> item2 = currentActiveObject.GetComponent<IItem<CollectibleItemData>>();
+        private void DebugObject(GameObject key) {
+            IItem<CollectibleItemData> item2 = activeObjects[key].GetComponent<IItem<CollectibleItemData>>();
             if (item2 != null)
-                Debug.Log("Collectible Item: " + item2.Data.name);
+                key.GetComponent<Inventory>().AddItem(new InventoryKeyValuePair(item2.Data, 1));
+
+
         }
         
     }
