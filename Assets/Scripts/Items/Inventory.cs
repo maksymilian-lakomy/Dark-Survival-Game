@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using BehaviorInterfaces;
+  using DefaultNamespace;
   using DefaultNamespace.Items;
   using ItemInterfaces;
 using UnityEngine;
@@ -16,9 +17,9 @@ public class Inventory  {
     // If you would like to have access to this inventory from another place.
     public List<InventorySlot> InventoryItems => inventoryItems; 
     
-    private IItem equippedItem;
+    private ItemData equippedItem;
     // Same as above.
-    public IItem EquippedItem => equippedItem; 
+    public ItemData EquippedItem => equippedItem; 
     
     [SerializeField]
     private int space = 6;
@@ -29,7 +30,7 @@ public class Inventory  {
         inventoryItems.Capacity = this.space;
     }
     
-    public bool AddItem(IInventoryItem item, int amount) {
+    public bool AddItem(ItemInventoryData item, int amount) {
         foreach (InventorySlot slot in inventoryItems) {
             if (slot.item == null) {
                 slot.item = new InventoryKeyValuePair(item, amount);
@@ -51,16 +52,16 @@ public class Inventory  {
         return true;
     }
 
-    public IItem EquipItem(IItem item) {
-        IItem previousEquippedItem = equippedItem;
+    public ItemData EquipItem(ItemData item) {
+        ItemData previousEquippedItem = equippedItem;
         equippedItem = item;
         return previousEquippedItem;
     }
     
-    public IItem UnequipItem() {
+    public ItemData UnequipItem() {
         if (equippedItem == null)
             return null;
-        IItem item = equippedItem;
+        ItemData item = equippedItem;
         equippedItem = null;
         return item;
     }

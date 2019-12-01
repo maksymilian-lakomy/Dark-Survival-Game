@@ -4,12 +4,12 @@ using ItemInterfaces;
 namespace DefaultNamespace.Items {
     [Serializable]
     public class InventoryKeyValuePair {
-        public InventoryKeyValuePair(IItem item, int amount) {
+        public InventoryKeyValuePair(ItemInventoryData item, int amount) {
             Item = item;
             Amount = amount;
         }
         
-        public IItem Item;
+        public ItemInventoryData Item;
         public int Amount;
     }
 }

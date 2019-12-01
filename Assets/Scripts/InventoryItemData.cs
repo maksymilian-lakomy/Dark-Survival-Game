@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using ItemInterfaces;
-public class InventoryItemData : ItemData, IInventoryItem
+public class InventoryItemData : ItemData
 {
     protected int maxInStack;
     protected Sprite inventorySprite;

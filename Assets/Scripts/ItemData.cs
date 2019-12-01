@@ -5,15 +5,11 @@ using ItemInterfaces;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "Items/ItemData")] 
-public class ItemData : ScriptableObject, IItem {
+public class ItemData : ScriptableObject{
     
-    protected string itemName;
-    protected string itemDescription;
-    protected GameObject itemPrefab;
-    
-    public string ItemName => itemName;
-    public string ItemDescription => itemDescription;
-    public GameObject ItemPrefab => itemPrefab;
+    public string ItemName;
+    public string ItemDescription;
+    public GameObject ItemPrefab;
 
     public List<ItemAction> ItemActions;
 }
