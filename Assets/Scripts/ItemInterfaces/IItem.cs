@@ -2,10 +2,7 @@
 
  namespace ItemInterfaces
  {
-     public interface IItem
-     {
-         string ItemName { get; }
-         string ItemDescription { get; }
-         Sprite ItemSprite { get; }
+     public interface IItem<T> where T: ItemData {
+          T ItemData { get; }
      }
  }

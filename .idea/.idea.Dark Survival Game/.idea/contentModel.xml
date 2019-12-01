@@ -24,16 +24,17 @@
           <e p="ItemAction.cs" t="Include" />
           <e p="ItemData.cs" t="Include" />
           <e p="ItemInterfaces" t="Include">
-            <e p="IInventoryItem.cs" t="Include" />
             <e p="IItem.cs" t="Include" />
             <e p="IItem.cs.meta" t="Include" />
           </e>
+          <e p="ItemInventoryData.cs" t="Include" />
           <e p="Items" t="Include">
             <e p="Actions" t="Include" />
             <e p="Actions.meta" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="Inventory.cs.meta" t="Include" />
             <e p="InventoryKeyValuePair.cs" t="Include" />
+            <e p="InventorySlot.cs" t="Include" />
           </e>
           <e p="Libraries" t="Include">
             <e p="OptimizedPriorityQueue.4.2.0" t="Include">
@@ -57,6 +58,7 @@
           <e p="TransparencySortGraphicsHelper.cs" t="Include" />
           <e p="Tree.cs" t="Include" />
           <e p="WeatherController.cs" t="Include" />
+          <e p="WorldInventoryItem.cs" t="Include" />
           <e p="WorldItem.cs" t="Include" />
           <e p="WorldObjects" t="Include">
             <e p="FireplaceObject.cs" t="Include" />

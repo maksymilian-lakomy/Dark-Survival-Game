@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using BehaviorInterfaces;
+  using DefaultNamespace;
   using DefaultNamespace.Items;
   using ItemInterfaces;
 using UnityEngine;
@@ -12,41 +13,58 @@ using UnityEngine;
 public class Inventory  {
     
       [SerializeField]
-    private List<InventoryKeyValuePair> inventoryItems = new List<InventoryKeyValuePair>();
+    private List<InventorySlot> inventoryItems = new List<InventorySlot>();
     // If you would like to have access to this inventory from another place.
-    public List<InventoryKeyValuePair> InventoryItems => inventoryItems; 
+    public List<InventorySlot> InventoryItems => inventoryItems; 
     
-    private IItem equippedItem;
+    private ItemData equippedItem;
     // Same as above.
-    public IItem EquippedItem => equippedItem; 
+    public ItemData EquippedItem => equippedItem; 
     
     [SerializeField]
     private int space = 6;
     public int Space => space;
+
+    public void UpdateInventorySize(int space) {
+        this.space = space;
+        inventoryItems.Capacity = this.space;
+    }
     
-    public bool AddItem(IInventoryItem item, int amount) {
-        if (inventoryItems.Count > Space) {
-            return false;
+    public bool AddItem(ItemInventoryData item, int amount) {
+        foreach (InventorySlot slot in inventoryItems) {
+            if (slot.item == null) {
+                slot.item = new InventoryKeyValuePair(item, amount);
+            } 
         }
-        inventoryItems.Add(new InventoryKeyValuePair(item, amount));
         return true;
     }
 
-    public IItem EquipItem(IItem item) {
-        IItem previousEquippedItem = equippedItem;
+    public InventoryKeyValuePair GetItem(int slotNumber) {
+        if (slotNumber > inventoryItems.Count)
+            return null;
+        return inventoryItems[slotNumber].item;
+    }
+    
+    public bool RemoveItem(int slotNumber) {
+        if (slotNumber > inventoryItems.Count)
+            return false;
+        inventoryItems[slotNumber].item = null;
+        return true;
+    }
+
+    public ItemData EquipItem(ItemData item) {
+        ItemData previousEquippedItem = equippedItem;
         equippedItem = item;
         return previousEquippedItem;
     }
-
-    public void DropItem(IItem item) {
-        ItemData itemData = item as ItemData;
-        if (itemData)
-            WorldItem.CreateWorldItem(itemData);
-    }
-
-    public void UnequipItem() {
+    
+    public ItemData UnequipItem() {
         if (equippedItem == null)
-            return;
-        IInventoryItem inventoryItem = equippedItem as IInventoryItem;
+            return null;
+        ItemData item = equippedItem;
+        equippedItem = null;
+        return item;
     }
+
+
   }
